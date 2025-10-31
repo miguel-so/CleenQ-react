@@ -1,9 +1,120 @@
-import { defaultSystem, createSystem, defineConfig } from '@chakra-ui/react'
+import {
+  defaultConfig,
+  createSystem,
+  defineTextStyles,
+  defineConfig,
+} from '@chakra-ui/react';
 
-// Custom theme with color tokens, typography, and fonts
-// Create system by extending default system config
+export const textStyles = defineTextStyles({
+  'lg-med': {
+    value: {
+      fontSize: '18px',
+      lineHeight: 'normal',
+      fontWeight: 500,
+    },
+  },
+  'lg-bold': {
+    value: {
+      fontSize: '18px',
+      lineHeight: 'normal',
+      fontWeight: 700,
+    },
+  },
+  h1: {
+    value: {
+      fontSize: '70px',
+      lineHeight: '100%',
+    },
+  },
+  'xl-med': {
+    value: {
+      fontSize: '24px',
+      lineHeight: '150%',
+      fontWeight: 500,
+    },
+  },
+  'button-text': {
+    value: {
+      fontSize: '18px',
+      lineHeight: 'normal',
+    },
+  },
+  'sm-bold': {
+    value: {
+      fontSize: '14px',
+      lineHeight: '140%',
+      fontWeight: 700,
+    },
+  },
+  'lg-reg': {
+    value: {
+      fontSize: '18px',
+      lineHeight: '160%',
+      fontWeight: 400,
+    },
+  },
+  h2: {
+    value: {
+      fontSize: '50px',
+      lineHeight: '110%',
+    },
+  },
+  'lg-med-160': {
+    value: {
+      fontSize: '18px',
+      lineHeight: '160%',
+      fontWeight: 500,
+    },
+  },
+  h3: {
+    value: {
+      fontSize: '30px',
+      lineHeight: '110%',
+    },
+  },
+  h4: {
+    value: {
+      fontSize: '24px',
+      lineHeight: '110%',
+    },
+  },
+  'md-reg': {
+    value: {
+      fontSize: '16px',
+      lineHeight: '160%',
+      fontWeight: 400,
+    },
+  },
+  'button-text-2': {
+    value: {
+      fontSize: '14px',
+      lineHeight: 'normal',
+    },
+  },
+  h5: {
+    value: {
+      fontSize: '36px',
+      lineHeight: '110%',
+    },
+  },
+  'sm-reg': {
+    value: {
+      fontSize: '14px',
+      lineHeight: 'normal',
+      fontWeight: 400,
+    },
+  },
+  'lg-sm-bold': {
+    value: {
+      fontSize: '18px',
+      lineHeight: '160%',
+      fontWeight: 700,
+    },
+  },
+});
+
 const system = createSystem(
-  defaultSystem._config,
+  defaultConfig,
   defineConfig({
     globalCss: {
       body: {
@@ -41,104 +152,13 @@ const system = createSystem(
           white: { value: '#FFFFFF' },
         },
         fonts: {
-          heading: { value: 'Archivo Narrow, sans-serif' },
+          heading: { value: 'Poppins, sans-serif' },
           body: { value: 'Poppins, sans-serif' },
         },
       },
-      textStyles: {
-        // LG Med, 18/Auto
-        'lg-med': {
-          fontSize: '18px',
-          lineHeight: 'normal',
-          fontWeight: 500,
-        },
-        // LG Bold, 18/Auto
-        'lg-bold': {
-          fontSize: '18px',
-          lineHeight: 'normal',
-          fontWeight: 700,
-        },
-        // H1, 70/100
-        h1: {
-          fontSize: '70px',
-          lineHeight: '100%',
-        },
-        // XL Med, 24/150
-        'xl-med': {
-          fontSize: '24px',
-          lineHeight: '150%',
-          fontWeight: 500,
-        },
-        // Button Text, 18/Auto
-        'button-text': {
-          fontSize: '18px',
-          lineHeight: 'normal',
-        },
-        // Sm Bold, 14/140
-        'sm-bold': {
-          fontSize: '14px',
-          lineHeight: '140%',
-          fontWeight: 700,
-        },
-        // LG Reg, 18/160
-        'lg-reg': {
-          fontSize: '18px',
-          lineHeight: '160%',
-          fontWeight: 400,
-        },
-        // H2, 50/110
-        h2: {
-          fontSize: '50px',
-          lineHeight: '110%',
-        },
-        // LG Med, 18/160 (duplicate name, using different key)
-        'lg-med-160': {
-          fontSize: '18px',
-          lineHeight: '160%',
-          fontWeight: 500,
-        },
-        // H3, 30/110
-        h3: {
-          fontSize: '30px',
-          lineHeight: '110%',
-        },
-        // H4, 24/110
-        h4: {
-          fontSize: '24px',
-          lineHeight: '110%',
-        },
-        // MD Reg, 16/160
-        'md-reg': {
-          fontSize: '16px',
-          lineHeight: '160%',
-          fontWeight: 400,
-        },
-        // Button Text 2, 14/Auto
-        'button-text-2': {
-          fontSize: '14px',
-          lineHeight: 'normal',
-        },
-        // H5, 36/110
-        h5: {
-          fontSize: '36px',
-          lineHeight: '110%',
-        },
-        // Sm Reg, 14/Auto
-        'sm-reg': {
-          fontSize: '14px',
-          lineHeight: 'normal',
-          fontWeight: 400,
-        },
-        // LG Sm Bold, 18/160
-        'lg-sm-bold': {
-          fontSize: '18px',
-          lineHeight: '160%',
-          fontWeight: 700,
-        },
-      },
+      textStyles,
     },
   })
-)
+);
 
-export default system
-
+export default system;
